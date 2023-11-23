@@ -16,7 +16,7 @@ public class Product {
     @Column(name = "product_id")
     private Long id;
     private String name;
-    @Column(columnDefinition = "LONG TEXT")
+    @Column(columnDefinition = "LONGTEXT")
     private String description;
     private int costPrice;
     private int salePrice;
