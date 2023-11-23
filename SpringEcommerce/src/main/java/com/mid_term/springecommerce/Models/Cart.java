@@ -21,7 +21,7 @@ public class Cart {
     private Long id;
     private int totalItems;
     private int totalPrice;
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
     private Customer customer;
 

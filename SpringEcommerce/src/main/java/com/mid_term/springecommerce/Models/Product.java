@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Data
 @AllArgsConstructor
@@ -15,19 +16,25 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
     private Long id;
+
     private String name;
-    @Column(columnDefinition = "LONG TEXT")
+
+    @Column(columnDefinition = "LONGTEXT")
     private String description;
+
     private int costPrice;
+
     private int salePrice;
+
     private int currentQuantity;
+
     private String image;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Category category;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "brand_id", referencedColumnName = "brand_id")
-    private Brand brand;
+
     private boolean is_activated;
+
     private boolean is_deleted;
 }
