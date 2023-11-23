@@ -18,7 +18,7 @@ public class Product {
     private Long id;
 
     private String name;
-
+ 
     @Column(columnDefinition = "LONGTEXT")
     private String description;
 
