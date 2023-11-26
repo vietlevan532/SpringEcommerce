@@ -10,4 +10,14 @@ public class HomeController {
     {
         return "index";
     }
+
+    @GetMapping("/contact")
+    public String renderContact() {
+        return "contact";
+    }
+
+    @GetMapping("/shop")
+    public String renderShop() {
+        return "shop";
+    }
 }
